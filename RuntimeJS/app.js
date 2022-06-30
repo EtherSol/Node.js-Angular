@@ -1,10 +1,14 @@
 // function
-const logger = require('./logger.js')
+const fs = require('fs');
+const files = fs.readdirSync('./');
 
-console.log(logger)
+console.log(files)
 
-logger.log('message')
-logger.senor('message2')
+const async_files = fs.readdir('./', function (err, files) {
+    if (err) console.log('Error', err);
+    else console.log('Results', files);
+})
+console.log(async_files)
 
 // // // Node Global objects
 // console.log();
