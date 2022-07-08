@@ -1,13 +1,13 @@
 // function
-const fs = require('fs');
-const files = fs.readdirSync('./');
+const EventEmmiter = require('events');
+const emitter = new EventEmmiter();
 
-console.log(files)
 
-const async_files = fs.readdir('./', function (err, files) {
-    if (err) console.log('Error', err);
-    else console.log('Results', files);
-})
+emitter.on('messagedLogged', function (eventArg) {
+    console.log('Listener called', eventArg);
+});
+
+emitter.emit('messagedLogged', { id: 1, url: 'http://' });
 // console.log(async_files)
 
 // // // Node Global objects
