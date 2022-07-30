@@ -36,6 +36,18 @@ app.post('/api/courses/', (req, res) => {
         return;
     }
 
+    app.put('api/courses/:id', (req, res) => {
+        // Look for the coarse
+        // Return 404, if the coarse does not exist
+
+        // Validate
+        // if invalid, return 400 - Bad request
+
+        // Update course 
+        // Return the updated course
+    });
+
+
 
     const course = {
         id: courses.length + 1,
